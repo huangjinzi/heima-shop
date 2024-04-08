@@ -1,8 +1,10 @@
 <script setup lang="ts">
-//
+import * as CustomNavbar from './components/CustomNavbar.vue'
 </script>
 
 <template>
+  <CustomNavbar />
+  <XtxSwiper />
   <uni-card
     title="基础卡片"
     sub-title="副标题"
