@@ -1,17 +1,17 @@
 <script setup lang="ts">
-// import type { BannerItem } from '@/types/home'
+import type { BannerItem } from '@/types/home'
 import { ref } from 'vue'
 
 const activeIndex = ref(0)
 
 // 当 swiper 下标发生变化时触发
-// const onChange: UniHelper.SwiperOnChange = (ev) => {
-//   activeIndex.value = ev.detail.current
-// }
+const onChange: UniHelper.SwiperOnChange = (ev) => {
+  activeIndex.value = ev.detail.current
+}
 // 定义 props 接收
-// defineProps<{
-//   list: BannerItem[]
-// }>()
+defineProps<{
+  list: BannerItem[]
+}>()
 </script>
 
 <template>
@@ -36,5 +36,5 @@ const activeIndex = ref(0)
 </template>
 
 <style lang="scss">
-// @import './styles/XtxSwiper.scss';
+@import './styles/XtxSwiper.scss';
 </style>

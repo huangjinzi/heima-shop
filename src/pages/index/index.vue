@@ -1,10 +1,27 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { onLoad } from '@dcloudio/uni-app'
 import * as CustomNavbar from './components/CustomNavbar.vue'
+import { getHomeBannerAPI, getHomeCategoryAPI, getHomeHotAPI } from '@/services/home'
+import type { BannerItem } from '@/types/home'
+
+// 获取轮播图数据
+const bannerList = ref<BannerItem[]>([])
+
+const getHomeBannerData = async () => {
+  const res = await getHomeBannerAPI()
+  bannerList.value = res.result
+}
+
+// 页面加载
+onLoad(async () => {
+  getHomeBannerData()
+})
 </script>
 
 <template>
   <CustomNavbar />
-  <XtxSwiper />
+  <XtxSwiper :list="bannerList" />
   <uni-card
     title="基础卡片"
     sub-title="副标题"
