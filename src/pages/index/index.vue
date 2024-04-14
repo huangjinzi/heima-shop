@@ -39,6 +39,28 @@ const onScrolltolower = () => {
   guessRef.value.getMore()
 }
 
+// 当前下拉刷新状态
+const isTriggered = ref(false)
+// 自定义下拉刷新被触发
+const onRefresherrefresh = async () => {
+  // 开始动画
+  isTriggered.value = true
+  // 加载数据
+  // await getHomeBannerData()
+  // await getHomeCategoryData()
+  // await getHomeHotData()
+  // 重置猜你喜欢组件数据
+  guessRef.value?.resetData()
+  await Promise.all([
+    getHomeBannerData(),
+    getHomeCategoryData(),
+    getHomeHotData(),
+    guessRef.value?.getMore(),
+  ])
+  // 关闭动画
+  isTriggered.value = false
+}
+
 // 是否加载中标记
 const isLoading = ref(false)
 
@@ -54,7 +76,14 @@ onLoad(async () => {
   <view class="viewport">
     <!-- 自定义导航栏 -->
     <CustomNavbar />
-    <scroll-view @scrolltolower="onScrolltolower" class="scroll-view" scroll-y>
+    <scroll-view
+      refresher-enabled
+      @refresherrefresh="onRefresherrefresh"
+      :refresher-triggered="isTriggered"
+      @scrolltolower="onScrolltolower"
+      class="scroll-view"
+      scroll-y
+    >
       <!-- 自定义轮播图 -->
       <XtxSwiper :list="bannerList" />
       <!-- 分类面板 -->
