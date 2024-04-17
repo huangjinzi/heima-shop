@@ -1,5 +1,5 @@
 <template name="skeleton">
-  <view is="components/XtxSwiper">
+  <view>
     <view class="carousel XtxSwiper--carousel">
       <!-- App 端控制台未知报错，删除 swiper 错误消失？ -->
       <view class="indicator XtxSwiper--indicator">
@@ -11,7 +11,7 @@
       </view>
     </view>
   </view>
-  <view is="pages/index/components/CategoryPanel">
+  <view>
     <view class="category CategoryPanel--category">
       <navigator class="category-item CategoryPanel--category-item" hover-class="none">
         <image class="icon CategoryPanel--icon sk-image"></image>
@@ -73,7 +73,7 @@
       </navigator>
     </view>
   </view>
-  <view is="pages/index/components/HotPanel">
+  <view>
     <view class="panel HotPanel--panel hot HotPanel--hot">
       <view class="item HotPanel--item">
         <view class="title HotPanel--title">
