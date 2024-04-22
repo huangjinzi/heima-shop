@@ -45,7 +45,7 @@ const loginSuccess = (profile: LoginResult) => {
 // #ifdef H5
 // 传统表单登录，测试账号：13123456789 密码：123456，测试账号仅开发学习使用。
 const form = ref({
-  account: '13123456789',
+  account: '18810774536',
   password: '',
 })
 
