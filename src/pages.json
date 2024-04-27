@@ -32,7 +32,7 @@
 				"navigationBarTitleText": "购物车"
 			}
 		},
-    {
+		{
 			"path": "pages/cart/cart2",
 			"style": {
 				"navigationBarTitleText": "购物车"
@@ -120,16 +120,38 @@
 						"navigationBarTitleText": "个人信息"
 					}
 				},
-        {
+				{
 					"path": "address/address",
 					"style": {
 						"navigationBarTitleText": "地址列表"
 					}
 				},
-        {
+				{
 					"path": "address-form/address-form",
 					"style": {
 						"navigationBarTitleText": ""
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesOrder/create",
+			"pages": [
+				{
+					"path": "create",
+					"style": {
+						"navigationBarTitleText": "创建订单"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesOrder/detail",
+			"pages": [
+				{
+					"path": "detail",
+					"style": {
+						"navigationBarTitleText": "订单详情"
 					}
 				}
 			]
