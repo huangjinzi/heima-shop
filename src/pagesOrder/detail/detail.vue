@@ -102,6 +102,7 @@ const logisticList = ref<LogisticItem[]>([])
 const getMemberOrderLogisticsByIdData = async () => {
   const res = await getMemberOrderLogisticsByIdAPI(query.id)
   logisticList.value = res.result.list
+  console.log(logisticList.value)
 }
 
 onLoad(() => {

@@ -151,7 +151,30 @@
 				{
 					"path": "detail",
 					"style": {
-						"navigationBarTitleText": "订单详情"
+						"navigationBarTitleText": "订单详情",
+						"navigationStyle": "custom"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesOrder/payment",
+			"pages": [
+				{
+					"path": "payment",
+					"style": {
+						"navigationBarTitleText": "支付结果页"
+					}
+				}
+			]
+		},
+		{
+			"root": "pagesOrder/list",
+			"pages": [
+				{
+					"path": "list",
+					"style": {
+						"navigationBarTitleText": "订单列表"
 					}
 				}
 			]
